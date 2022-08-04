@@ -504,7 +504,7 @@ namespace mamba
                                   - )"
                                 + (fs::path(root_prefix_str) / "pkgs").string() + R"(  # 'fallback'
                                   - )"
-                                + (env::home_directory() / ".mamba" / "pkgs").string()
+                                + (env::xdg_data() / "pkgs").string()
                                 + R"(  # 'fallback')" + extra_cache)
                                    .c_str()));
             EXPECT_EQ(ctx.pkgs_dirs, config.at("pkgs_dirs").value<std::vector<fs::path>>());
