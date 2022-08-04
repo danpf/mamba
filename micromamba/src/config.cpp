@@ -62,7 +62,7 @@ compute_config_path(bool touch_if_not_exists)
     auto& env_path = config.at("config_set_env_path");
     auto& system_path = config.at("config_set_system_path");
 
-    fs::path rc_source = env::expand_user(env::home_directory() / ".condarc");
+    fs::path rc_source = env::expand_user(env::xdg_config() / "condarc");
 
     if (file_path.configured())
     {

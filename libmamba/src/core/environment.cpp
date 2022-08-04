@@ -223,6 +223,36 @@ namespace mamba
             return maybe_home;
         }
 
+        fs::path xdg_config()
+        {
+            std::string maybe_xdg_config = env::get("XDG_CONFIG_HOME").value_or("");
+            if (maybe_xdg_config.empty())
+            {
+                maybe_xdg_config = home_directory() / ".config";
+            }
+            return fs::path(maybe_xdg_config) / "mamba";
+        }
+
+        fs::path xdg_cache()
+        {
+            std::string maybe_xdg_cache = env::get("XDG_CACHE_HOME").value_or("");
+            if (maybe_xdg_cache.empty())
+            {
+                maybe_xdg_cache = home_directory() / ".cache";
+            }
+            return fs::path(maybe_xdg_cache) / "mamba";
+        }
+
+        fs::path xdg_data()
+        {
+            std::string maybe_xdg_data = env::get("XDG_DATA_HOME").value_or("");
+            if (maybe_xdg_data.empty())
+            {
+                maybe_xdg_data = home_directory() / ".local" / "share";
+            }
+            return fs::path(maybe_xdg_data) / "mamba";
+        }
+
         fs::path expand_user(const fs::path& path)
         {
             auto p = path.string();

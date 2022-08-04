@@ -54,6 +54,9 @@ namespace mamba
         std::map<std::string, std::string> copy();
         std::string platform();
         fs::path home_directory();
+        fs::path xdg_config();
+        fs::path xdg_cache();
+        fs::path xdg_data();
 
         fs::path expand_user(const fs::path& path);
         fs::path shrink_user(const fs::path& path);

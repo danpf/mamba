@@ -762,7 +762,7 @@ namespace mamba
         std::vector<fs::path> fallback_pkgs_dirs_hook()
         {
             std::vector<fs::path> paths = { Context::instance().root_prefix / "pkgs",
-                                            env::home_directory() / ".mamba" / "pkgs" };
+                                            env::xdg_data() / "pkgs" };
 #ifdef _WIN32
             auto appdata = env::get("APPDATA");
             if (appdata)
@@ -1618,7 +1618,8 @@ namespace mamba
                                        env::home_directory() / ".conda/condarc",
                                        env::home_directory() / ".conda/condarc.d",
                                        env::home_directory() / ".condarc",
-                                       env::home_directory() / ".mambarc" };
+                                       env::home_directory() / ".mambarc",
+                                       env::xdg_config() / "mambarc" };
 
         std::vector<fs::path> prefix = { ctx.target_prefix / ".condarc",
                                          ctx.target_prefix / "condarc",

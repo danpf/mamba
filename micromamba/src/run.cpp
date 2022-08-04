@@ -98,7 +98,7 @@ namespace mamba
 
     const fs::path& proc_dir()
     {
-        static auto path = env::home_directory() / ".mamba" / "proc";
+        static auto path = env::xdg_cache() / "proc";
         return path;
     }
 

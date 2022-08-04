@@ -194,7 +194,7 @@ namespace mamba
         }
 
         std::map<std::string, AuthenticationInfo> res;
-        fs::path auth_loc(mamba::env::home_directory() / ".mamba" / "auth" / "authentication.json");
+        fs::path auth_loc(mamba::env::xdg_data() / "auth" / "authentication.json");
         try
         {
             if (fs::exists(auth_loc))

@@ -61,7 +61,7 @@ set_logout_command(CLI::App* subcom)
     subcom->callback(
         []()
         {
-            static auto path = mamba::env::home_directory() / ".mamba" / "auth";
+            static auto path = mamba::env::xdg_data() / "auth";
             fs::path auth_file = path / "authentication.json";
 
             if (all)
@@ -138,7 +138,7 @@ set_login_command(CLI::App* subcom)
             if (token_stdin)
                 token = read_stdin();
 
-            static auto path = mamba::env::home_directory() / ".mamba" / "auth";
+            static auto path = mamba::env::xdg_data() / "auth";
             fs::create_directories(path);
 
 
