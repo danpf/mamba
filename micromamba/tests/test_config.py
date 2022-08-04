@@ -127,6 +127,7 @@ class TestConfigSources:
             # "/var/lib/conda/condarc",
             # "/var/lib/conda/condarc.d/",
             # "/var/lib/conda/.mambarc",
+            ("home", ".config/mamba/mambarc"),
             ("home", ".conda/.condarc"),
             ("home", ".conda/condarc"),
             ("home", ".conda/condarc.d"),
