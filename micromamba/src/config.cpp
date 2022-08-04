@@ -62,7 +62,7 @@ compute_config_path(bool touch_if_not_exists)
     auto& env_path = config.at("config_set_env_path");
     auto& system_path = config.at("config_set_system_path");
 
-    fs::path rc_source = env::expand_user(env::xdg_config() / "condarc");
+    fs::path rc_source = env::expand_user(env::xdg_config() / "mambarc");
 
     if (file_path.configured())
     {
@@ -70,7 +70,7 @@ compute_config_path(bool touch_if_not_exists)
     }
     else if (env_path.configured())
     {
-        rc_source = fs::path(ctx.target_prefix / ".condarc");
+        rc_source = fs::path(ctx.target_prefix / ".mambarc");
     }
     else if (system_path.configured())
     {
