@@ -22,7 +22,7 @@ assert pyserver.exists()
 
 @pytest.fixture
 def auth_file(tmp_home):
-    return tmp_home / ".mamba/auth/authentication.json"
+    return tmp_home / ".local/share/mamba/authentication.json"
 
 
 def reposerver_multi(

@@ -133,6 +133,7 @@ class TestConfigSources:
             ("home", ".conda/condarc.d"),
             ("home", ".condarc"),
             ("home", ".mambarc"),
+            ("home", "mambarc"),
             ("root_prefix", ".condarc"),
             ("root_prefix", "condarc"),
             ("root_prefix", "condarc.d"),

@@ -1,12 +1,8 @@
-import json
 import os
-import shutil
-import subprocess
-from pathlib import Path
-
 import pytest
+import shutil
 
-from .helpers import create, get_env, info, random_string
+from .helpers import create, info, random_string
 
 
 class TestInfo:
@@ -18,7 +14,7 @@ class TestInfo:
     env_name = random_string()
     root_prefix = os.path.expanduser(os.path.join("~", "tmproot" + random_string()))
     prefix = os.path.join(root_prefix, "envs", env_name)
-    user_config = os.path.expanduser(os.path.join("~", ".mambarc"))
+    user_config = os.path.join(os.getenv("XDG_DATA_HOME", os.path.expanduser("~/.config")), "mamba", "mambarc")
 
     @classmethod
     def setup_class(cls):
